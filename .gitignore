@@ -1,0 +1,4 @@
+## Ignore NODE modules
+## General ignores when use NodeJS that are not required to be tracked in repository
+node_modules/
+.DS_Store/
