@@ -16,26 +16,48 @@ const questions = [
         name: 'description',
         message: 'Please provide a brief description of the Project?',
     },
-    // {
-    //     type: 'input',
-    //     name: 'install',
-    //     message: 'Please provide instructions for installation of your Project? (Leave blank if n/a)',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'usage',
-    //     message: 'Please provide usage information about this Project. ',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'contribute',
-    //     message: 'Please provide guidelines for contribution.',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'test',
-    //     message: 'Please provide test instructions for this Project. (Leave blank if n/a)',
-    // }
+    {
+        type: 'input',
+        name: 'install',
+        message: 'Please provide instructions for installation of your Project? (comma deliminate each instruction)',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please provide usage information about this Project. ',
+    },
+    {
+        type: 'input',
+        name: 'contribute',
+        message: 'Please provide guidelines for contribution.',
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Please provide test instructions for this Project. (comma deliminate each instruction)',
+    },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Please provide a license for this Project. (Leave blank if n/a, hint MIT is typical)',
+        choices: ['MIT','Mozilla','Unlicense','GNU GPLv3', 'Apache 2.0']
+    },
+    {
+        type: 'input',
+        name: 'gitHubUser',
+        message: 'Please provide your GitHub username.)',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please provide your email to contact you for questions on this project.)',
+        validate: function(email)
+        {
+            //from stackoverflow
+            // Regex mail check (return true if valid mail)
+            return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+        }
+    },
 ];
 
 // TODO: Create a function to write README file
@@ -56,7 +78,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((response) => {
-            console.log(response);
+            console.log('please wait sending response to write file function');
             writeToFile('README.md', response);
         });
 }
