@@ -6,19 +6,19 @@ function renderLicenseBadge(license) {
 
   switch (license) {
   case 'Apache 2.0':
-    const appacheBadge = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    const appacheBadge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
     return appacheBadge;
   case 'GNU GPLv3':
-    const gnuBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+    const gnuBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
     return gnuBadge;
-  case 'GNU GPLv3':
-    const unlicenseBadge = '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
+  case 'Unlicense':
+    const unlicenseBadge = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
     return unlicenseBadge;
-  case 'GNU GPLv3':
-    const mozillaBadge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+  case 'Mozilla':
+    const mozillaBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
     return mozillaBadge;
-  case 'GNU GPLv3':
-    const mitBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+  case 'MIT':
+    const mitBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
     return mitBadge;
   default:
     return 'BADGE undefined';
@@ -86,7 +86,7 @@ function generateMarkdown(data) {
   // markDownArr.push(`## Contributing\n\n`);
   // markDownArr.push(`## Tests\n\n`);
   markDownArr.push(`## Questions\n\n`);
-  markDownArr.push(`Have questions about the project? [Contact Me](${data.email})`);
+  markDownArr.push(`Have questions about the project? [Contact Me](${data.email})\n`);
   markDownArr.push(`${badge}\n\n`);
 
   return markDownArr.join('');
