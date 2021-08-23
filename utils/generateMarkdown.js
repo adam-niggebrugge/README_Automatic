@@ -1,5 +1,12 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+/**
+ * From https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+ * Badges and links to the appropriate licensing documation
+ * @param {*} license - string - should be one of several file names
+ * @returns string in mark down style of [[license badge](link of image)(link to license doc)]
+ * 'BADGE undefined' means switch case did not find license
+ */
 function renderLicenseBadge(license) {
   console.log('inside render License Badge');
   console.log(license);
@@ -25,16 +32,11 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  console.log('inside render License Link');
-  console.log(license)
-  return 'jokes';
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+/**
+ * Concatenates license badges mark downs based on selections
+ * @param {*} licenses object array licenses requesting badges
+ * @returns string - array that is joined on empty space between mark down license badges
+ */
 function renderLicenseSection(licenses) {
   console.log('inside render License Section');
   console.log(licenses);
@@ -46,50 +48,89 @@ function renderLicenseSection(licenses) {
   return badges.join(' ');
 }
 
-// function renderInstructionSection(instructions){
-//   console.log(`inside instruction rendering ${instructions}`);
-//   let result = [];
-//   //Using backticks for markdown code style of install instrunctions
-//   result.push(`\`\`\`\n`);
-//   const commands = instructions.split(',');
+/**
+ * Takes comma delinated strings and breaks each to be a separate line for a markdown file. Places values in a code block. string should be checked for being empty prior to call
+ * @param {*} instructions string delinated by comma 
+ * @returns string 
+ */
+function renderInstructionSection(instructions){
+  console.log(`inside instruction rendering ${instructions}`);
+  let result = [];
+  //Using backticks for markdown code style of install instrunctions
+  result.push(`\`\`\`\n`);
+  const commands = instructions.split(',');
   
-//   if(commands.length > 1){
-//     for(const command of commands){
-//       result.push(`${command}\n`);
-//     }
-//   } else{
-//     result.push(commands);
-//   }
-//   result.push(`\`\`\``);
+  if(commands.length > 1){
+    for(const command of commands){
+      result.push(`${command}\n`);
+    }
+  } else {
+    result.push(commands);
+  } 
+  result.push(`\`\`\`\n\n`);
 
-//   return result.join('');
-// }
+  return result.join('');
+}
 
 
-// TODO: Create a function to generate markdown for README
+/**
+ * 
+ * @param {*} data JSON object maps
+ * @returns string of formatted README file with user inputs given in inquirer
+ */
 function generateMarkdown(data) {
   console.log('inside generate Markdown');
   console.log(data);
   let markDownArr = [];
 
-  const badge = renderLicenseSection(data.license);
-  // const instructions = renderInstructionSection(data.instructions);
-  console.log(`found badge(s) is(are): ${badge}`);
-
-  markDownArr.push(`# ${data.title}\n\n`);
+  
+  
+  markDownArr.push(`# ${data.title}\n\n`); //largest heading
+  
+  if(!data.license) {
+    const badge = renderLicenseSection(data.license);
+    markDownArr.push(`### License(s)\n\n`); //largest heading
+    markDownArr.push(`${badge}\n\n`);//badges near top
+ }
 
   markDownArr.push(`## Description\n\n`);
   markDownArr.push(`${data.description}\n\n`);
-  // markDownArr.push(`## Installation\n\n`);
-  // markDownArr.push(`${instructions}\n\n`);
-  // markDownArr.push(`## Usage\n\n`);
-  // markDownArr.push(`## Contributing\n\n`);
-  // markDownArr.push(`## Tests\n\n`);
+ 
+  //check for null or empty strings or undefined per stackoverflow and the flexible javascript
+  if(!data.instructions) {
+    const installIntructs = renderInstructionSection(data.install);
+    markDownArr.push(`## Installation\n\n`);
+    markDownArr.push(`${installIntructs}\n\n`);  
+  } else {
+    markDownArr.push(`## Installation\n\n`);
+    markDownArr.push(`No Instructions required or place holder\n\n`);
+  }
+
+  if(!data.test){
+    const testInstructs = renderInstructionSection(data.test);
+    markDownArr.push(`## Tests\n\n`);
+    markDownArr.push(`${testInstructs}\n\n`);
+  } else {
+    markDownArr.push(`## Tests\n\n`);
+    markDownArr.push(`No tests required or place holder\n\n`);
+  }
+
+  markDownArr.push(`_ _ _ _`); //break the readme with a horizontal line
+
+  markDownArr.push(`## Usage\n\n`);
+  markDownArr.push(`${data.usage}\n\n`);
+  
+  markDownArr.push(`## Contributing\n\n`);
+  markDownArr.push(`${data.contribute}\n\n`);
+
+  markDownArr.push(`_ _ _ _`); //break the readme with a horizontal line
+
   markDownArr.push(`## Questions\n\n`);
-  markDownArr.push(`Have questions about the project? [Contact Me](${data.email})\n`);
-  markDownArr.push(`${badge}\n\n`);
+  markDownArr.push(`Have questions about the project?\n\n1.[Email Me](${data.email})\n\n`);
 
   return markDownArr.join('');
 }
+
 //Very tricky, given code had a fault of not putting curly braces around it
+//allows other scripts to access the function generateMarkdown
 module.exports = {generateMarkdown};

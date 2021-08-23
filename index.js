@@ -60,10 +60,12 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+/**
+ * function to write README file that was Create a 
+ * @param {*} fileName - string, any file name with extension
+ * @param {*} data - inquirer JSON object, pass to generateMarkDown script to format README
+ */
 function writeToFile(fileName, data) {
-    console.log(fileName);
-    console.log(data);
     const fileContents = markdownGenerator.generateMarkdown(data);
     fs.writeFile(fileName, fileContents, (err) =>
         err ? console.log(err) 
@@ -73,8 +75,6 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    console.log('before inquirer runs promise');
-
     inquirer
         .prompt(questions)
         .then((response) => {
