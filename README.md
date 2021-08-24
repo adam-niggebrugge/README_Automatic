@@ -1,36 +1,45 @@
-# Cat Back Scratchers!
+# Cat Back Scratcher Superstar
+
+### License(s)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 ## Description
 
-This could be the best project out there. A steady line of products where cats contract out their services to fill the human need of a good back scratching.
+The best of the cat back scratchers rally to revive a once forgotten franchise.
+
+_ _ _ _
 
 ## Installation
 
 ```
-find cat
- contract cat
- allow cat to cat stuff on back
- pay cat
- what could go wrong?
 ```
 
 
 
 ## Tests
 
-No tests required or place holder
+```
+```
 
-_ _ _ _## Usage
 
-This project is attempting to bring good feral cats into human homes. As we expand this offering to multiple locations we hope to rekindle cat love in the US while relieving the burden of unsnuggled faces.
+
+_ _ _ _
+
+## Usage
+
+Used to get back scratches from felines.
 
 ## Contributing
 
-Any cat enthusiast.
+Cats or Werecats only
 
-_ _ _ _## Questions
+_ _ _ _
+
+## Questions
 
 Have questions about the project?
 
-1.[Email Me](catCrazy@man.com)
+1. :[Email Me](cat.back@scratch.com)
 
+2. Or contact [profile](https://github.com/Catterrang3)

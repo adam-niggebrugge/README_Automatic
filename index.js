@@ -1,10 +1,7 @@
-// TODO: Include packages needed for this application
 const markdownGenerator = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-
-// TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -15,6 +12,11 @@ const questions = [
         type: 'input',
         name: 'description',
         message: 'Please provide a brief description of the Project?',
+    },
+    {
+        type: 'input',
+        name: 'tech',
+        message: 'Please list the any tech used. (comma delimante each tech)',
     },
     {
         type: 'input',
@@ -39,18 +41,18 @@ const questions = [
     {
         type: 'checkbox',
         name: 'license',
-        message: 'Please provide a license for this Project. (Leave blank if n/a, hint MIT is typical)',
+        message: 'Please select a license for this Project.',
         choices: ['MIT','Mozilla','Unlicense','GNU GPLv3', 'Apache 2.0']
     },
     {
         type: 'input',
         name: 'gitHubUser',
-        message: 'Please provide your GitHub username.)',
+        message: 'Please provide your GitHub username.',
     },
     {
         type: 'input',
         name: 'email',
-        message: 'Please provide your email to contact you for questions on this project.)',
+        message: 'Please provide your email to contact you for questions on this project.',
         validate: function(email)
         {
             //from stackoverflow
@@ -73,7 +75,7 @@ function writeToFile(fileName, data) {
     );
 }
 
-// TODO: Create a function to initialize app
+
 function init() {
     inquirer
         .prompt(questions)
