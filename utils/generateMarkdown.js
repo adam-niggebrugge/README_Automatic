@@ -93,7 +93,7 @@ function generateMarkdown(data) {
  
   markDownArr.push(`## Usage\n\n`);
   markDownArr.push(`${data.usage}\n\n`);
-  
+
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
   
   if(!data.tech == '') {
