@@ -44,12 +44,10 @@ javascript, nodejs, node inquirer
 npm install inquirer
 
 ```
-<!DOCTYPE html>
-<html>
-  <body>
-    <iframe src="https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview" width="640" height="480" allow="autoplay"></iframe>
-  </body>
-</html>
+![running_AUTO_README](https://user-images.githubusercontent.com/83618122/130685192-9dcb55f9-94d7-41e2-b767-67ffa6361d0f.gif)
+
+[Watch Video Here](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
+
 
 _ _ _ _
 
