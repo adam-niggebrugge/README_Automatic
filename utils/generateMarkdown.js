@@ -6,9 +6,6 @@
  * 'BADGE undefined' means switch case did not find license
  */
 function renderLicenseBadge(license) {
-  console.log('inside render License Badge');
-  console.log(license);
-
   switch (license) {
   case 'Apache 2.0':
     const appacheBadge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
@@ -36,61 +33,56 @@ function renderLicenseBadge(license) {
  * @returns string - array that is joined on empty space between mark down license badges
  */
 function renderLicenseSection(licenses) {
-  console.log('inside render License Section');
-  console.log(licenses);
   let badges = [];
   for (const license of licenses){
         badges.push(renderLicenseBadge(license));
       }
-  console.log(badges);
   return badges.join(' ');
 }
 
 /**
- * Takes comma delinated strings and breaks each to be a separate line for a markdown file. Places values in a code block. string should be checked for being empty prior to call
- * @param {*} instructions string delinated by comma 
- * @returns string 
- */
-function renderCodeBlockSection(instructions){
-  console.log(`inside instruction rendering ${instructions}`);
-  let result = [];
-  //Using backticks for markdown code style of install instrunctions
-  result.push(`\`\`\`\n`);
-  result.push(`${instructions}`);
-  result.push(`\`\`\`\n\n`);
-
-  return result.join('');
-}
-/**
- * 
+ * Split any string based on comma delimination and place in a block style section of code
  * @param {*} stringToSplit string comma deliminated
- * @returns 
+ * @returns string
  */
-function splitCommaStrings(stringToSplit){
+function renderCodeBlockSection(stringToSplit){
   const parts = stringToSplit.split(',');
+  
   let result = [];
+  result.push(`\`\`\`\n`);
   
   if(parts.length > 1){
     for(const part of parts){
-      result.push(`${part.replace(',','').trim()}\n`);
+      result.push(`${part.trim()}\n`);
     }
   } else {
-    result.push(parts.trim());
+    result.push(`${parts}\n`);
   } 
+  result.push(`\`\`\``);
+
   return result;
 }
 
 /**
- * 
+ * Use an arry to sequentitally construct a README file contents
  * @param {*} data JSON object maps
  * @returns string of formatted README file with user inputs given in inquirer
  */
 function generateMarkdown(data) {
-  console.log('inside generate Markdown');
-  console.log(data);
   let markDownArr = [];
 
   markDownArr.push(`# ${data.title}\n\n`); //largest heading
+
+  //create table of contents
+  markDownArr.push(`## Table of Contents\n\n`);
+  markDownArr.push(`1. [License](#License(s))\n\n`);
+  markDownArr.push(`2. [Description](#Description)\n\n`);
+  markDownArr.push(`3. [Technology](#Technology)\n\n`);
+  markDownArr.push(`4. [Installation](#Installation)\n\n`);
+  markDownArr.push(`5. [Tests](#Tests)\n\n`);
+  markDownArr.push(`6. [Usage](#Usage)\n\n`);
+  markDownArr.push(`7. [Contributing](#Contributing)\n\n`);
+  markDownArr.push(`8. [Questions](#Questions)\n\n`);
 
   const badge = renderLicenseSection(data.license);
   markDownArr.push(`### License(s)\n\n`); //largest heading
@@ -99,27 +91,38 @@ function generateMarkdown(data) {
   markDownArr.push(`## Description\n\n`);
   markDownArr.push(`${data.description}\n\n`);
  
+  if(!data.tech == '') {
+    markDownArr.push(`## Technology\n\n`);
+    markDownArr.push(`${data.tech}\n\n`);  
+  } else {
+    markDownArr.push(`## Technology\n\n`);
+    markDownArr.push(`No tech listed (TODO)\n\n`);
+  }
+
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
 
   //check for null or empty strings or undefined per stackoverflow and the flexible javascript
   if(!data.install == '') {
-    const installIntructs = splitCommaStrings(data.install);
-    const codeBlockInstall = renderCodeBlockSection(installIntructs);
+    const installIntructs = renderCodeBlockSection(data.install);
     markDownArr.push(`## Installation\n\n`);
-    markDownArr.push(`${codeBlockInstall}\n\n`);  
+    //cycle through parts to add individually 
+    for(const installIntruct of installIntructs){
+      markDownArr.push(`${installIntruct}\n`);
+    }  
   } else {
     markDownArr.push(`## Installation\n\n`);
-    markDownArr.push(`No Instructions required or place holder\n\n`);
+    markDownArr.push(`No Instructions required (TODO)\n\n`);
   }
 
   if(!data.test == ''){
-    const testInstructs = splitCommaStrings(data.test);
-    const codeBlockTest = renderCodeBlockSection(testInstructs);
+    const testInstructs = renderCodeBlockSection(data.test);
     markDownArr.push(`## Tests\n\n`);
-    markDownArr.push(`${codeBlockTest}\n\n`);
+    for(const testInstruct of testInstructs){
+      markDownArr.push(`${testInstruct}\n`);
+    }
   } else {
     markDownArr.push(`## Tests\n\n`);
-    markDownArr.push(`No tests required or place holder\n\n`);
+    markDownArr.push(`No tests required (TODO)\n\n`);
   }
 
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
@@ -136,9 +139,9 @@ function generateMarkdown(data) {
   markDownArr.push(`Have questions about the project?\n\n1. [Email Me](${data.email})\n\n`);
   markDownArr.push(`2. [profile](https://github.com/${data.gitHubUser})\n`)
   return markDownArr.join('');
-
 }
 
 //Very tricky, given code had a fault of not putting curly braces around it
 //allows other scripts to access the function generateMarkdown
 module.exports = {generateMarkdown};
+
