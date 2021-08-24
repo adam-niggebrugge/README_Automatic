@@ -1,38 +1,37 @@
-# Cat Back Scratcher Superstar
+# Auto_README_Pro
 
 ### License(s)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-The best of the cat back scratchers rally to revive a once forgotten franchise.
+A command prompted set of questions using nodejs inquirer and filestream components to help a generate a README file with appropriate mark ups.
 
 _ _ _ _
 
 ## Installation
 
 ```
+npm install
+,node index.js
 ```
 
 
 
 ## Tests
 
-```
-```
-
-
+No tests required or place holder
 
 _ _ _ _
 
 ## Usage
 
-Used to get back scratches from felines.
+This project is free to pull and build up to add cool icons.
 
 ## Contributing
 
-Cats or Werecats only
+Merge requests will be reviewed for meaninful contributions.
 
 _ _ _ _
 
@@ -40,6 +39,6 @@ _ _ _ _
 
 Have questions about the project?
 
-1. :[Email Me](cat.back@scratch.com)
+1. [Email Me](adam.niggebrugge@gmail.com)
 
-2. Or contact [profile](https://github.com/Catterrang3)
+2. [profile](https://github.com/adam-niggebrugge)
