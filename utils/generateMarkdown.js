@@ -40,34 +40,12 @@ function renderLicenseSection(licenses) {
   return badges.join(' ');
 }
 
-// /**
-//  * Takes comma delinated strings and breaks each to be a separate line for a markdown file. Places values in a code block. string should be checked for being empty prior to call
-//  * @param {*} instructions string delinated by comma 
-//  * @returns string 
-//  */
-// function renderCodeBlockSection(instructions){
-//   let result = [];
-
-//   //Using backticks for markdown code style of install instrunctions
-//   result.push(`\`\`\`\n`);
-//   if(instructions.includes(',')){
-//     console.log(`inside instructions ${instructions.replace(',')}`);
-    
-//     result.push(`${instructions.replace(',')}\n`);
-//   }else{
-//     result.push(`${instructions}\n`);
-//   }
-//   result.push(`\`\`\``);
-
-//   return result.join('');
-// }
-
 /**
- * Split any string based on comma delimination
+ * Split any string based on comma delimination and place in a block style section of code
  * @param {*} stringToSplit string comma deliminated
  * @returns string
  */
-function splitCommaStrings(stringToSplit){
+function renderCodeBlockSection(stringToSplit){
   const parts = stringToSplit.split(',');
   
   let result = [];
@@ -125,9 +103,9 @@ function generateMarkdown(data) {
 
   //check for null or empty strings or undefined per stackoverflow and the flexible javascript
   if(!data.install == '') {
-    const installIntructs = splitCommaStrings(data.install);
-    // const codeBlockInstall = renderCodeBlockSection(installIntructs);
+    const installIntructs = renderCodeBlockSection(data.install);
     markDownArr.push(`## Installation\n\n`);
+    //cycle through parts to add individually 
     for(const installIntruct of installIntructs){
       markDownArr.push(`${installIntruct}\n`);
     }  
@@ -137,10 +115,8 @@ function generateMarkdown(data) {
   }
 
   if(!data.test == ''){
-    const testInstructs = splitCommaStrings(data.test);
-    // const codeBlockTest = renderCodeBlockSection(testInstructs);
+    const testInstructs = renderCodeBlockSection(data.test);
     markDownArr.push(`## Tests\n\n`);
-    console.log(`inside test ${testInstructs}`)
     for(const testInstruct of testInstructs){
       markDownArr.push(`${testInstruct}\n`);
     }
