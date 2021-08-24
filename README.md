@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-1. [License](#License(s))
+1. [License](#License\(s\))
 
 2. [Description](#Description)
 
@@ -31,6 +31,7 @@ Program steps through questions to format a markdown file with general sections 
 
 Please see video attachment below. This README was generated from this script (tho not with images)
 
+<iframe src="https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview" width="640" height="480"></iframe>
 _ _ _ _
 
 ## Technology
@@ -44,6 +45,8 @@ javascript, nodejs, node inquirer
 npm install inquirer
 
 ```
+![npm_install_inquirer](https://user-images.githubusercontent.com/83618122/130674562-a4bc08e1-6d85-45c2-8e6e-412b3b150528.gif)
+
 _ _ _ _
 
 ## Tests
