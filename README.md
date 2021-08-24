@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-1. [License](#License\(s\))
+1. [License](#License)
 
 2. [Description](#Description)
 
@@ -19,7 +19,7 @@
 
 8. [Questions](#Questions)
 
-### License(s)
+### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
