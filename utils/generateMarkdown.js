@@ -84,17 +84,6 @@ function generateMarkdown(data) {
   markDownArr.push(`7. [Contributing](#Contributing)\n\n`);
   markDownArr.push(`8. [Questions](#Questions)\n\n`);
 
-  //create table of contents
-  markDownArr.push(`## Table of Contents\n\n`);
-  markDownArr.push(`1. [License](#License(s))\n\n`);
-  markDownArr.push(`2. [Description](#Description)\n\n`);
-  markDownArr.push(`3. [Technology](#Technology)\n\n`);
-  markDownArr.push(`4. [Installation](#Installation)\n\n`);
-  markDownArr.push(`5. [Tests](#Tests)\n\n`);
-  markDownArr.push(`6. [Usage](#Usage)\n\n`);
-  markDownArr.push(`7. [Contributing](#Contributing)\n\n`);
-  markDownArr.push(`8. [Questions](#Questions)\n\n`);
-
   const badge = renderLicenseSection(data.license);
   markDownArr.push(`### License(s)\n\n`); //largest heading
   markDownArr.push(`${badge}\n\n`);//badges near top
