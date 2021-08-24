@@ -77,10 +77,10 @@ function generateMarkdown(data) {
   markDownArr.push(`## Table of Contents\n\n`);
   markDownArr.push(`1. [License](#License(s))\n\n`);
   markDownArr.push(`2. [Description](#Description)\n\n`);
-  markDownArr.push(`3. [Technology](#Technology)\n\n`);
-  markDownArr.push(`4. [Installation](#Installation)\n\n`);
-  markDownArr.push(`5. [Tests](#Tests)\n\n`);
-  markDownArr.push(`6. [Usage](#Usage)\n\n`);
+  markDownArr.push(`3. [Usage](#Usage)\n\n`);
+  markDownArr.push(`4. [Technology](#Technology)\n\n`);
+  markDownArr.push(`5. [Installation](#Installation)\n\n`);
+  markDownArr.push(`6. [Tests](#Tests)\n\n`);
   markDownArr.push(`7. [Contributing](#Contributing)\n\n`);
   markDownArr.push(`8. [Questions](#Questions)\n\n`);
 
@@ -91,6 +91,10 @@ function generateMarkdown(data) {
   markDownArr.push(`## Description\n\n`);
   markDownArr.push(`${data.description}\n\n`);
  
+  markDownArr.push(`## Usage\n\n`);
+  markDownArr.push(`${data.usage}\n\n`);
+  
+
   if(!data.tech == '') {
     markDownArr.push(`## Technology\n\n`);
     markDownArr.push(`${data.tech}\n\n`);  
@@ -100,6 +104,14 @@ function generateMarkdown(data) {
   }
 
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
+  
+  if(!data.tech == '') {
+    markDownArr.push(`## Technology\n\n`);
+    markDownArr.push(`${data.tech}\n\n`);  
+  } else {
+    markDownArr.push(`## Technology\n\n`);
+    markDownArr.push(`No tech listed (TODO)\n\n`);
+  }
 
   //check for null or empty strings or undefined per stackoverflow and the flexible javascript
   if(!data.install == '') {
@@ -114,6 +126,8 @@ function generateMarkdown(data) {
     markDownArr.push(`No Instructions required (TODO)\n\n`);
   }
 
+  markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
+
   if(!data.test == ''){
     const testInstructs = renderCodeBlockSection(data.test);
     markDownArr.push(`## Tests\n\n`);
@@ -125,11 +139,6 @@ function generateMarkdown(data) {
     markDownArr.push(`No tests required (TODO)\n\n`);
   }
 
-  markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
-
-  markDownArr.push(`## Usage\n\n`);
-  markDownArr.push(`${data.usage}\n\n`);
-  
   markDownArr.push(`## Contributing\n\n`);
   markDownArr.push(`${data.contribute}\n\n`);
 
