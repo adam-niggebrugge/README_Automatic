@@ -1,4 +1,4 @@
-# tesve hcke
+# AUTO_README_PRO
 
 ## Table of Contents
 
@@ -6,13 +6,13 @@
 
 2. [Description](#Description)
 
-3. [Technology](#Technology)
+3. [Usage](#Usage)
 
-4. [Installation](#Installation)
+4. [Technology](#Technology)
 
-5. [Tests](#Tests)
+5. [Installation](#Installation)
 
-6. [Usage](#Usage)
+6. [Tests](#Tests)
 
 7. [Contributing](#Contributing)
 
@@ -20,43 +20,38 @@
 
 ### License(s)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-what cimve tes vheve ad
+Program steps through questions to format a markdown file with general sections that are a part of any good README
+
+## Usage
+
+Please see video attachment below. This README was generated from this script (tho not with images)
+
+_ _ _ _
 
 ## Technology
 
-javascript, nodejs
-
-_ _ _ _
+javascript, nodejs, node inquirer
 
 ## Installation
 
 ```
 
-npm install
-
-node index.js
-
-```
-## Tests
-
-```
-
-asdfsd
+npm install inquirer
 
 ```
 _ _ _ _
 
-## Usage
+## Tests
 
-inform em no eht traeh
+No tests required (TODO)
 
 ## Contributing
 
-niontubirtnoc emoclew
+All contributions are welcomed. Accepts any pull requests. Merge requests will be subject to repository owner review. Forking is encouraged if this script will meet your base needs but you have ideas of your own on what could be improved.
 
 _ _ _ _
 
@@ -64,6 +59,6 @@ _ _ _ _
 
 Have questions about the project?
 
-1. [Email Me](adav@adve.com)
+1. [Email Me](adam.niggebrugge@gmail.com)
 
-2. [profile](https://github.com/asdf sdafsd )
+2. [Profile](https://github.com/adam-niggebrugge)
