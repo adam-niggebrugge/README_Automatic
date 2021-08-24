@@ -71,7 +71,18 @@ function renderCodeBlockSection(stringToSplit){
 function generateMarkdown(data) {
   let markDownArr = [];
 
-  markDownArr.push(`# ${data.title}\n\n`); //largest heading
+  markDownArr.push(`# ${data.title.toUpperCase()}\n\n`); //largest heading
+
+  //create table of contents
+  markDownArr.push(`## Table of Contents\n\n`);
+  markDownArr.push(`1. [License](#License(s))\n\n`);
+  markDownArr.push(`2. [Description](#Description)\n\n`);
+  markDownArr.push(`3. [Technology](#Technology)\n\n`);
+  markDownArr.push(`4. [Installation](#Installation)\n\n`);
+  markDownArr.push(`5. [Tests](#Tests)\n\n`);
+  markDownArr.push(`6. [Usage](#Usage)\n\n`);
+  markDownArr.push(`7. [Contributing](#Contributing)\n\n`);
+  markDownArr.push(`8. [Questions](#Questions)\n\n`);
 
   //create table of contents
   markDownArr.push(`## Table of Contents\n\n`);
@@ -137,7 +148,7 @@ function generateMarkdown(data) {
 
   markDownArr.push(`## Questions\n\n`);
   markDownArr.push(`Have questions about the project?\n\n1. [Email Me](${data.email})\n\n`);
-  markDownArr.push(`2. [profile](https://github.com/${data.gitHubUser})\n`)
+  markDownArr.push(`2. [Profile](https://github.com/${data.gitHubUser})\n`)
   return markDownArr.join('');
 }
 
