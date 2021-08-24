@@ -40,20 +40,27 @@ function renderLicenseSection(licenses) {
   return badges.join(' ');
 }
 
-/**
- * Takes comma delinated strings and breaks each to be a separate line for a markdown file. Places values in a code block. string should be checked for being empty prior to call
- * @param {*} instructions string delinated by comma 
- * @returns string 
- */
-function renderCodeBlockSection(instructions){
-  let result = [];
-  //Using backticks for markdown code style of install instrunctions
-  result.push(`\`\`\`\n`);
-  result.push(`${instructions}\n`);
-  result.push(`\`\`\`\n\n`);
+// /**
+//  * Takes comma delinated strings and breaks each to be a separate line for a markdown file. Places values in a code block. string should be checked for being empty prior to call
+//  * @param {*} instructions string delinated by comma 
+//  * @returns string 
+//  */
+// function renderCodeBlockSection(instructions){
+//   let result = [];
 
-  return result.join('');
-}
+//   //Using backticks for markdown code style of install instrunctions
+//   result.push(`\`\`\`\n`);
+//   if(instructions.includes(',')){
+//     console.log(`inside instructions ${instructions.replace(',')}`);
+    
+//     result.push(`${instructions.replace(',')}\n`);
+//   }else{
+//     result.push(`${instructions}\n`);
+//   }
+//   result.push(`\`\`\``);
+
+//   return result.join('');
+// }
 
 /**
  * Split any string based on comma delimination
@@ -63,19 +70,18 @@ function renderCodeBlockSection(instructions){
 function splitCommaStrings(stringToSplit){
   const parts = stringToSplit.split(',');
   
-  console.log('string split');
-  console.log(parts);
-  
   let result = [];
-  //TODO check logic of replace
+  result.push(`\`\`\`\n`);
+  
   if(parts.length > 1){
     for(const part of parts){
-      console.log(part)
       result.push(`${part.trim()}\n`);
     }
   } else {
     result.push(`${parts}\n`);
   } 
+  result.push(`\`\`\``);
+
   return result;
 }
 
@@ -91,13 +97,14 @@ function generateMarkdown(data) {
 
   //create table of contents
   markDownArr.push(`## Table of Contents\n\n`);
-  markDownArr.push(`1. [License](#License)\n\n`);
+  markDownArr.push(`1. [License](#License(s))\n\n`);
   markDownArr.push(`2. [Description](#Description)\n\n`);
-  markDownArr.push(`3. [Installation](#Installation)\n\n`);
-  markDownArr.push(`4. [Tests](#Tests)\n\n`);
-  markDownArr.push(`5. [Usage](#Usage)\n\n`);
-  markDownArr.push(`6. [Contributing](#Contributing)\n\n`);
-  markDownArr.push(`7. [Questions](#Questions)\n\n`);
+  markDownArr.push(`3. [Technology](#Technology)\n\n`);
+  markDownArr.push(`4. [Installation](#Installation)\n\n`);
+  markDownArr.push(`5. [Tests](#Tests)\n\n`);
+  markDownArr.push(`6. [Usage](#Usage)\n\n`);
+  markDownArr.push(`7. [Contributing](#Contributing)\n\n`);
+  markDownArr.push(`8. [Questions](#Questions)\n\n`);
 
   const badge = renderLicenseSection(data.license);
   markDownArr.push(`### License(s)\n\n`); //largest heading
@@ -106,27 +113,40 @@ function generateMarkdown(data) {
   markDownArr.push(`## Description\n\n`);
   markDownArr.push(`${data.description}\n\n`);
  
+  if(!data.tech == '') {
+    markDownArr.push(`## Technology\n\n`);
+    markDownArr.push(`${data.tech}\n\n`);  
+  } else {
+    markDownArr.push(`## Technology\n\n`);
+    markDownArr.push(`No tech listed (TODO)\n\n`);
+  }
+
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
 
   //check for null or empty strings or undefined per stackoverflow and the flexible javascript
   if(!data.install == '') {
     const installIntructs = splitCommaStrings(data.install);
-    const codeBlockInstall = renderCodeBlockSection(installIntructs);
+    // const codeBlockInstall = renderCodeBlockSection(installIntructs);
     markDownArr.push(`## Installation\n\n`);
-    markDownArr.push(`${codeBlockInstall}\n\n`);  
+    for(const installIntruct of installIntructs){
+      markDownArr.push(`${installIntruct}\n`);
+    }  
   } else {
     markDownArr.push(`## Installation\n\n`);
-    markDownArr.push(`No Instructions required or place holder\n\n`);
+    markDownArr.push(`No Instructions required (TODO)\n\n`);
   }
 
   if(!data.test == ''){
     const testInstructs = splitCommaStrings(data.test);
-    const codeBlockTest = renderCodeBlockSection(testInstructs);
+    // const codeBlockTest = renderCodeBlockSection(testInstructs);
     markDownArr.push(`## Tests\n\n`);
-    markDownArr.push(`${codeBlockTest}\n\n`);
+    console.log(`inside test ${testInstructs}`)
+    for(const testInstruct of testInstructs){
+      markDownArr.push(`${testInstruct}\n`);
+    }
   } else {
     markDownArr.push(`## Tests\n\n`);
-    markDownArr.push(`No tests required or place holder\n\n`);
+    markDownArr.push(`No tests required (TODO)\n\n`);
   }
 
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
