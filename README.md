@@ -30,7 +30,11 @@ Program steps through questions to format a markdown file with general sections 
 ## Usage
 
 Please see video attachment below. This README was generated from this script (tho not with images)
-![VideoLink](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
+
+
+![running_AUTO_README](https://user-images.githubusercontent.com/83618122/130685192-9dcb55f9-94d7-41e2-b767-67ffa6361d0f.gif)
+
+[Watch Video Here](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
 _ _ _ _
 
 ## Technology
@@ -44,16 +48,14 @@ javascript, nodejs, node inquirer
 npm install inquirer
 
 ```
-![running_AUTO_README](https://user-images.githubusercontent.com/83618122/130685192-9dcb55f9-94d7-41e2-b767-67ffa6361d0f.gif)
 
-[Watch Video Here](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
-
+![npm_install_inquirer](https://user-images.githubusercontent.com/83618122/130686997-d469b4d7-9ee2-4b63-97d5-92a40ea8b843.gif)
 
 _ _ _ _
 
 ## Tests
 
-No tests required (TODO)
+No tests required
 
 ## Contributing
 
