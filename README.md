@@ -30,8 +30,7 @@ Program steps through questions to format a markdown file with general sections 
 ## Usage
 
 Please see video attachment below. This README was generated from this script (tho not with images)
-
-<iframe src="https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview" width="640" height="480"></iframe>
+![VideoLink](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
 _ _ _ _
 
 ## Technology
