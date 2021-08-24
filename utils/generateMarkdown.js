@@ -75,7 +75,7 @@ function generateMarkdown(data) {
 
   //create table of contents
   markDownArr.push(`## Table of Contents\n\n`);
-  markDownArr.push(`1. [License](#License(s))\n\n`);
+  markDownArr.push(`1. [License](#License)\n\n`);
   markDownArr.push(`2. [Description](#Description)\n\n`);
   markDownArr.push(`3. [Usage](#Usage)\n\n`);
   markDownArr.push(`4. [Technology](#Technology)\n\n`);
@@ -85,7 +85,7 @@ function generateMarkdown(data) {
   markDownArr.push(`8. [Questions](#Questions)\n\n`);
 
   const badge = renderLicenseSection(data.license);
-  markDownArr.push(`### License(s)\n\n`); //largest heading
+  markDownArr.push(`### License\n\n`); //largest heading
   markDownArr.push(`${badge}\n\n`);//badges near top
 
   markDownArr.push(`## Description\n\n`);
