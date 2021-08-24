@@ -49,7 +49,7 @@ function renderCodeBlockSection(instructions){
   let result = [];
   //Using backticks for markdown code style of install instrunctions
   result.push(`\`\`\`\n`);
-  result.push(`${instructions}`);
+  result.push(`${instructions}\n`);
   result.push(`\`\`\`\n\n`);
 
   return result.join('');
@@ -70,10 +70,11 @@ function splitCommaStrings(stringToSplit){
   //TODO check logic of replace
   if(parts.length > 1){
     for(const part of parts){
+      console.log(part)
       result.push(`${part.trim()}\n`);
     }
   } else {
-    result.push(parts);
+    result.push(`${parts}\n`);
   } 
   return result;
 }

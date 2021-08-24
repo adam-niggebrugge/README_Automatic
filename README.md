@@ -1,4 +1,4 @@
-# Auto_READM_Pro
+# test
 
 ## Table of Contents
 
@@ -22,14 +22,16 @@
 
 ## Description
 
-A README file is generated when the user runs this script and follows the prompts
+tester of test
 
 _ _ _ _
 
 ## Installation
 
 ```
-npm install```
+npm install
+,node index.js
+```
 
 
 
@@ -44,11 +46,11 @@ _ _ _ _
 
 ## Usage
 
-This README file was generated using this script.
+Readme seen was generated using this script
 
 ## Contributing
 
-Pull requests are welcomed. Any merge request will be reviewed by project owner. Forking is always welcomed for those who like the start of this script.
+All pull requests are accepted. Merging will be reviewed by owner. Forks are gladly accepted for those liking the start but wanting to freely do more.
 
 _ _ _ _
 
