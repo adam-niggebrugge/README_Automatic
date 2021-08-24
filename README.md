@@ -44,7 +44,12 @@ javascript, nodejs, node inquirer
 npm install inquirer
 
 ```
-![npm_install_inquirer](https://user-images.githubusercontent.com/83618122/130674562-a4bc08e1-6d85-45c2-8e6e-412b3b150528.gif)
+<!DOCTYPE html>
+<html>
+  <body>
+    <iframe src="https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview" width="640" height="480" allow="autoplay"></iframe>
+  </body>
+</html>
 
 _ _ _ _
 
