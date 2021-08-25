@@ -52,7 +52,7 @@ npm install inquirer
 
 ![npm_install_inquirer](https://user-images.githubusercontent.com/83618122/130686997-d469b4d7-9ee2-4b63-97d5-92a40ea8b843.gif)
 
-```
+
 _ _ _ _
 
 ## Tests
