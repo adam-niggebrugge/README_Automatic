@@ -93,7 +93,7 @@ function generateMarkdown(data) {
  
   markDownArr.push(`## Usage\n\n`);
   markDownArr.push(`${data.usage}\n\n`);
-
+  
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
   
   if(!data.tech == '') {
@@ -136,7 +136,7 @@ function generateMarkdown(data) {
   markDownArr.push(`_ _ _ _\n\n`); //break the readme with a horizontal line
 
   markDownArr.push(`## Questions\n\n`);
-  markDownArr.push(`Have questions about the project?\n\n1. [Email Me](${data.email})\n\n`);
+  markDownArr.push(`Have questions about the project?\n\n1. [Email Me](mailto:${data.email})\n\n`);
   markDownArr.push(`2. [Profile](https://github.com/${data.gitHubUser})\n`)
   return markDownArr.join('');
 }
