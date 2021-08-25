@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-# AUTO_README_PRO
-
-## Table of Contents
-
-1. [License](#License(s))
-
-2. [Description](#Description)
-
-3. [Usage](#Usage)
-
-4. [Technology](#Technology)
-
-5. [Installation](#Installation)
-
-6. [Tests](#Tests)
-
-7. [Contributing](#Contributing)
-
-8. [Questions](#Questions)
-=======
->>>>>>> cf14289a42af25181046601d5de0fbf4f98967cd
 
 # AUTO_README_PRO
 
@@ -50,50 +28,36 @@
 Program steps through questions to format a markdown file with general sections that are a part of any good README
 
 ## Usage
-<<<<<<< HEAD
 
 Please see video attachment below. This README was generated from this script (tho not with images)
 
-_ _ _ _
 
-## Technology
-
-javascript, nodejs, node inquirer
-
-## Installation
-
-```
-
-npm install inquirer
-=======
-
-Please see video attachment below. This README was generated from this script (tho not with images)
-![VideoLink](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
-_ _ _ _
-
-## Technology
-
-javascript, nodejs, node inquirer
-
-## Installation
-
-```
-
-npm install inquirer
-
-```
 ![running_AUTO_README](https://user-images.githubusercontent.com/83618122/130685192-9dcb55f9-94d7-41e2-b767-67ffa6361d0f.gif)
 
 [Watch Video Here](https://drive.google.com/file/d/1CYVM37hvahP5L2GyCdIRT4TGArlQqCcm/preview)
+_ _ _ _
 
->>>>>>> cf14289a42af25181046601d5de0fbf4f98967cd
+## Technology
+
+javascript, nodejs, node inquirer
+
+## Installation
+
+```
+
+npm install inquirer
+
+```
+
+
+![npm_install_inquirer](https://user-images.githubusercontent.com/83618122/130686997-d469b4d7-9ee2-4b63-97d5-92a40ea8b843.gif)
 
 ```
 _ _ _ _
 
 ## Tests
 
-No tests required (TODO)
+No tests required
 
 ## Contributing
 
@@ -108,7 +72,3 @@ Have questions about the project?
 1. [Email Me](adam.niggebrugge@gmail.com)
 
 2. [Profile](https://github.com/adam-niggebrugge)
-<<<<<<< HEAD
-=======
-
->>>>>>> cf14289a42af25181046601d5de0fbf4f98967cd
